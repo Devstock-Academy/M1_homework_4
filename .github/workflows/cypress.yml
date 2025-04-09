@@ -21,7 +21,7 @@ jobs:
       - name: Fetch Original Hash from Repository
         id: fetch-hash
         run: |
-          ORIGINAL_TEST_URL="https://github.com/Devstock-Academy/M1_homework_4/cypress/e2e/spec.cy.js"
+          ORIGINAL_TEST_URL="https://github.com/Devstock-Academy/M1_homework_4/blob/main/cypress/e2e/spec.cy.js"
           curl -fsSL "$ORIGINAL_TEST_URL" -o original_test_file.js
           EXPECTED_HASH=$(shasum -a 256 original_test_file.js | awk '{ print $1 }')
           echo "original_hash=$EXPECTED_HASH" >> $GITHUB_OUTPUT
